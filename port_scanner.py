@@ -35,6 +35,21 @@ def scan_ports(ip, start_port, end_port):
     else:
         print("\nNo open ports found.")
 
+def validate_ip(ip):
+    """
+    Validates the format of the provided IP address.
+
+    Args:
+        ip (str): The IP address to validate.
+
+    Returns:
+        bool: True if the IP address is valid, False otherwise.
+    """
+    try:
+        socket.inet_aton(ip)  # Check if the IP address is valid
+        return True
+    except socket.error:
+        return False
 
 def main():
     pass
