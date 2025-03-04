@@ -33,7 +33,7 @@ def scan_ports(ip, start_port, end_port):
         for port in open_ports:
             print(f"- Port {port} is open")
     else:
-        print("\nNo open ports found.")
+        print("\nNo open ports found... :(")
 
 def validate_ip(ip):
     """
@@ -52,7 +52,42 @@ def validate_ip(ip):
         return False
 
 def main():
-    pass
+    try:
+        target_ip = input("Enter an IP address to scan for open ports: ").strip()
+
+        # Validate the IP address
+        if not validate_ip(target_ip):
+            print("Invalid IP address. Please enter a valid IPv4 address.")
+            sys.exit(1)
+
+        # Get user input for the port range
+        print("Ports range from 1 - 65535")
+        start_port = int(input("Starting port: "))
+        end_port = int(input("End Port: "))
+
+        # Validate the port range
+        if not (1 <= start_port <= 65535 and 1 <= end_port <= 65535):
+            print("Invalid port range. Ports must be between 1 and 65535.")
+            sys.exit(1)
+        if start_port > end_port:
+            print("Invalid port range. The starting port must be less or equal to the ending port.")
+            sys.exit(1)
+
+        # Start the scan
+        scan_start_time = datetime.now()
+        scan_ports(target_ip, start_port, end_port)
+        scan_end_time = datetime.now()
+
+        # Calculate and display the total scan time
+        total_time = scan_end_time - scan_start_time
+        print(f"\nScan completed in: {total_time}")
+
+    except ValueError:
+        print("Invalid input. Please enter numeric values for ports.")
+        sys.exit(1)
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
