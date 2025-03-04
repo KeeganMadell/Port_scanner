@@ -2,6 +2,15 @@ A python program that scans your network for open ports.
 
 It uses the `socket` library to scan for open ports on a given IP address.
 
+The program consists of a single file and 2 functions, 
+File:
+- port_scanner.py
+
+Functions:
+- validate_ip(ip) - This function validates the IP address entered by the user.
+- scan_ports(ip, start_port, end_port) - This function scans the IP address for open ports.
+
+
 How it works:
 - The program takes an IP address as input.
 - It then scans the the start and end port the user chooses on that IP address.
