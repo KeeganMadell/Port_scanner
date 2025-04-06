@@ -30,10 +30,12 @@ def main():
         print(f"Error: Unable to resolve host name '{target}'")
         sys.exit(1)
 
-    print("=" * 20)
+    print("=" * 30)
+    print("SCANINATOR")
+    print("=" * 30)
     print(f"Scanning target: {target_ip}")
     print(f"Time started: {datetime.now()}")
-    print("=" * 20)
+    print("=" * 30)
 
     try:
         threads = []
@@ -45,14 +47,17 @@ def main():
         for thread in threads:
             thread.join()
     except KeyboardInterrupt:
-        print("\n Exiting program.")
+        print("\nExiting program.")
         sys.exit(0)
     
     except socket.error as e:
         print(f"Socket error: {e}")
         sys.exit(1)
     
+    print("=" * 20)
     print("\nScan completed.")
+    print(f"Time Completed: {datetime.now()}")
+    
 
 if __name__ == '__main__':
     main()
