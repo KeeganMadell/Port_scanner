@@ -24,3 +24,7 @@ Created by:
 KeeganMadell
 
 The HUB: https://github.com/KeeganMadell
+
+## Changes - 25/04/06
+Revamped the code. I decided to rewrite the code to hone my skill but using terminal arguments instead
+- old code is located in 'oldcode.txt'
