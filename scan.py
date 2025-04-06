@@ -44,3 +44,15 @@ def main():
 
         for thread in threads:
             thread.join()
+    except KeyboardInterrupt:
+        print("\n Exiting program.")
+        sys.exit(0)
+    
+    except socket.error as e:
+        print(f"Socket error: {e}")
+        sys.exit(1)
+    
+    print("\nScan completed.")
+
+if __name__ == '__main__':
+    main()
