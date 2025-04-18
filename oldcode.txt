@@ -83,7 +83,7 @@ def main():
         print(f"\nScan completed in: {total_time}")
 
     except ValueError:
-        print("Invalid input. Please enter numeric values for ports.")
+        print("Invalid input. Please enter numbers for ports.")
         sys.exit(1)
     except Exception as e:
         print(f"An error occurred: {e}")

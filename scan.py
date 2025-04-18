@@ -26,7 +26,7 @@ def main():
 
     try:
         target_ip = socket.gethostbyname(target)
-    except socket.gaierror: #host name issue
+    except socket.gaierror: 
         print(f"Error: Unable to resolve host name '{target}'")
         sys.exit(1)
 
